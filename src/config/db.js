@@ -6,7 +6,7 @@ const pool = new Pool({
     user:process.env.DB_USER,
     password: `${process.env.DB_PASSWORD}`,
     database:process.env.DB_NAME,
-    ssl: process.env.NODE_ENV === 'production' ? true :  false
+    ssl: process.env.NODE_ENV === 'production' ? true : false
 });
 
 const initDatabase = async() => {
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS portfolio(
 
 await db.query(`
 CREATE TABLE IF NOT EXISTS informacoes(
-    id SERIEL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     nome  VARCHAR(255) NOT NULL,
     foto VARCHAR(255) NOT NULL,
     cargo VARCHAR (255) NOT NULL,
